@@ -1,13 +1,15 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
-	"strings"
+	"os"
 )
 
 func main() {
-	var army string = "해군!"
-	armyFixed := strings.NewReplacer("!", "국")
-	fmt.Println(army)
-	fmt.Println(armyFixed.Replace(army))
+	fmt.Print("이름 입력 : ")
+	in := bufio.NewReader(os.Stdin)
+	name, err := in.ReadString('\n')
+	fmt.Println(name)
+	fmt.Println(err)
 }
